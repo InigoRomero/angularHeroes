@@ -1,0 +1,29 @@
+version: '2' # specify docker-compose version
+
+# Define the services/containers to be run
+services:
+    angular: # name of the first service
+        build: angular-tour-of-heroes # specify the directory of the Dockerfile
+        ports:
+        - "4200:4200" # specify port forewarding
+        volumes:
+            - ./server/:/usr/src/app
+            - /usr/src/app/node_modules
+
+    express: #name of the second service
+        build: server # specify the directory of the Dockerfile
+        ports:
+            - "3000:3000" #specify ports forewarding
+        volumes:
+            - ./server/:/app
+            - /app/node_modules
+
+    postgres:
+        image: 'postgres:latest'
+        restart: always
+        volumes:
+            - './postgres_data:/var/lib/postgresql/data'
+        environment:
+            - POSTGRES_PASSWORD=test
+        ports:
+            - '5432:5432'
