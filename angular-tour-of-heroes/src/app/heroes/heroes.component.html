@@ -11,11 +11,18 @@
 </ul>
 
 <div>
-  <label for="new-hero">Hero name: </label>
+  <h3>Hero: </h3>
+  <label for="new-hero">name: </label>
   <input id="new-hero" #heroName />
+  <label for="new-hero">weapon: </label>
+  <input id="new-hero" #heroWeapon />
+  <label for="new-hero">city: </label>
+  <input id="new-hero" #heroCity />
+  <label for="new-hero">description: </label>
+  <input id="new-hero" #heroDescription />
 
   <!-- (click) passes input value to add() and then clears the input -->
-  <button class="add-button" (click)="add(heroName.value); heroName.value=''">
+  <button class="add-button" (click)="add(heroName.value, heroWeapon.value, heroCity.value, heroDescription.value); heroName.value=''">
     Add hero
   </button>
 </div>
