@@ -1,0 +1,27 @@
+const dbConfig = require("../config/db.config.js");
+
+const Sequelize = require("sequelize");
+const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
+  host: dbConfig.HOST,
+  dialect: dbConfig.dialect,
+
+  pool: {
+    max: dbConfig.pool.max,
+    min: dbConfig.pool.min,
+    acquire: dbConfig.pool.acquire,
+    idle: dbConfig.pool.idle
+  }
+});
+
+const db = {};
+
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+
+db.heroes = require("./heroes.model.js")(sequelize, Sequelize);
+db.villain = require("./villain.model.js")(sequelize, Sequelize);
+
+db.heroes.hasMany(db.villain, {foreingKey: 'idHeroe', sourceKey: 'idHeroe'});
+db.villain.belongsTo(db.heroes, {foreingKey: 'idHeroe', sourceKey: 'idHeroe'});
+
+module.exports = db;

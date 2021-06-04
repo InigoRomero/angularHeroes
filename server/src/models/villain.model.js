@@ -1,7 +1,6 @@
-
 module.exports = (sequelize, Sequelize) => {
-    const Heroes = sequelize.define("heroes", {
-        idHeroe: {
+    const Villain = sequelize.define("villain", {
+        idVillain: {
             type: Sequelize.INTEGER,
             primaryKey: true
         },
@@ -14,10 +13,13 @@ module.exports = (sequelize, Sequelize) => {
         city: {
             type: Sequelize.STRING
         },
+        idVillain: {
+            type: Sequelize.INTEGER
+        },
         description: {
             type: Sequelize.STRING
         }
         });
-        
-    return Heroes;
+  
+    return Villain;
   };
