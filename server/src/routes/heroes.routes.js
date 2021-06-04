@@ -16,7 +16,7 @@ module.exports = app => {
     router.get("/:id", heroes.findOne);
   
     // Update a Tutorial with id
-    router.put("/:id", heroes.update);
+    router.put("/", heroes.update);
   
     // Delete a Tutorial with id
     router.delete("/:id", heroes.delete);

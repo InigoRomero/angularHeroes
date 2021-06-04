@@ -1,4 +1,8 @@
 export interface Hero {
-    id: number;
+    idHeroe: number;
     name: string;
+    weapon: string;
+    city: string;
+    description: string;
+    villains: object;
   }

@@ -68,10 +68,9 @@ exports.create = (req, res) => {
   
   // Update a heroe by the id in the request
   exports.update = (req, res) => {
-    const id = req.params.id;
-  
+    const id = req.body.idHeroe;
     Heroe.update(req.body, {
-      where: { id: id }
+      where: { idHeroe: id }
     })
       .then(num => {
         if (num == 1) {
@@ -94,9 +93,8 @@ exports.create = (req, res) => {
   // Delete a heroe with the specified id in the request
   exports.delete = (req, res) => {
     const id = req.params.id;
-  
     Heroe.destroy({
-      where: { id: id }
+      where: { idHeroe: id }
     })
       .then(num => {
         if (num == 1) {
