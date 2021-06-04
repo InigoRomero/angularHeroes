@@ -14,9 +14,6 @@ module.exports = (sequelize, Sequelize) => {
         city: {
             type: Sequelize.STRING
         },
-        idVillain: {
-            type: Sequelize.INTEGER
-        },
         description: {
             type: Sequelize.STRING
         },

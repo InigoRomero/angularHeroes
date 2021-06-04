@@ -1,5 +1,6 @@
 const db = require("../models");
 const Heroe = db.heroes;
+const Villain = db.villain;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new heroe
@@ -134,7 +135,10 @@ exports.create = (req, res) => {
   
   // find all published heroe
   exports.findAllArchEnemies  = (req, res) => {
-    Heroe.findAll({ where: { published: true } })
+    Heroe.findAll({
+    include: [{
+        model: Villain
+    }] })
       .then(data => {
         res.send(data);
       })
