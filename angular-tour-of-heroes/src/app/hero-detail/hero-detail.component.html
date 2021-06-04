@@ -1,10 +1,15 @@
 <div *ngIf="hero">
 
     <h2>{{hero.name | uppercase}} Details</h2>
-    <div><span>id: </span>{{hero.idHeroe}}</div>
     <div>
-      <label for="hero-name">Hero name: </label>
-      <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+      <label for="hero-name">Name: </label>
+      <input id="hero-name" [(ngModel)]="hero.name" placeholder="name"> <br>
+      <label for="hero-name">Weapon: </label>
+      <input id="hero-weapon" [(ngModel)]="hero.weapon" placeholder="weapon"> <br>
+      <label for="hero-name">City: </label>
+      <input id="hero-city" [(ngModel)]="hero.city" placeholder="city"> <br>
+      <label for="hero-name">Description: </label>
+      <input id="hero-description" [(ngModel)]="hero.description" placeholder="description"> <br>
     </div>
     <button (click)="save()">save</button>
 </div>
