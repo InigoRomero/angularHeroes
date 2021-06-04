@@ -3,7 +3,8 @@ module.exports = (sequelize, Sequelize) => {
     const Heroes = sequelize.define("heroes", {
         idHeroe: {
             type: Sequelize.INTEGER,
-            primaryKey: true
+            primaryKey: true,
+            autoIncrement: true
         },
         name: {
             type: Sequelize.STRING
@@ -16,7 +17,11 @@ module.exports = (sequelize, Sequelize) => {
         },
         description: {
             type: Sequelize.STRING
-        }
+        },
+              // Timestamps
+        createdAt: Sequelize.DATE,
+        updatedAt: Sequelize.DATE,
+        deletedAT: Sequelize.DATE
         });
         
     return Heroes;

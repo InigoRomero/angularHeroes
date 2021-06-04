@@ -23,8 +23,10 @@ db.sequelize.sync();
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "Welcome to application." });
 });
+
+require("./src/routes/heroes.routes.js")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 3000;
