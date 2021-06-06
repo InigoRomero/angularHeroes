@@ -26,10 +26,11 @@ export class VillainsComponent implements OnInit {
         .subscribe(villains => this.villains = villains);
   }
 
-  add(name: string, weapon: string, description: string, heroIdHeroe: number): void {
+  add(name: string, weapon: string, description: string, heroIdHeroe2: string): void {
     name = name.trim();
     weapon = weapon.trim();
     description = description.trim();
+    let heroIdHeroe =  parseInt(heroIdHeroe2, 10);
     if (!name || !weapon || !heroIdHeroe || !description) { return; }
     this.villainService.addVillain({ name, weapon, description, heroIdHeroe } as Villain)
       .subscribe(villain => {
