@@ -12,8 +12,8 @@ ng serve --open
 ```
 # webflow
 ### home
-![Home](https://github.com/InigoRomero/angularHeroes/blob/main/captures/home.png)
+![Home](https://github.com/InigoRomero/angularHeroes/blob/main/captures/home.PNG)
 ### Heroes
-![heroes](https://github.com/InigoRomero/angularHeroes/blob/main/captures/Heroes.png)
+![heroes](https://github.com/InigoRomero/angularHeroes/blob/main/captures/Heroes.PNG)
 ### Villains
-![Loading]((https://github.com/InigoRomero/angularHeroes/blob/main/captures/villain.png)
+![Loading]((https://github.com/InigoRomero/angularHeroes/blob/main/captures/villain.PNG)
